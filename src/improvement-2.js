@@ -9,11 +9,5 @@ export default function processItems(items) {
   if (!items || !Array.isArray(items)) {
     throw new Error("Expected an array of items.");
   }
-  const processedItems = [];
-  for (const item of items) {
-    if (item.type === "Food") {
-      processedItems.push(item);
-    }
-  }
-  return processedItems;
+  return items.filter(item => item.type === "Food")
 }

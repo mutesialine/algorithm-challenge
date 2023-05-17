@@ -5,12 +5,7 @@
  */
 
 // FUNCTION 1
+
 export default function countOccurrencesOfR(letters) {
-  let count = 0;
-  for (let letter of letters) {
-    if (letter == "R") {
-      count++;
-    }
-  }
-  return count;
+  return letters.split('').filter(letter => letter=== "R").length;
 }
