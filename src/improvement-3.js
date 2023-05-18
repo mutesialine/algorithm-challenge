@@ -6,7 +6,7 @@
 
 // FUNCTION 3
 export default function findLargestNumber(numbers) {
-  if (!Array.isArray(numbers) || numbers.length === 0) {
+  if (!Array.isArray(numbers) || !numbers.length) {
     return undefined;
   }
   //the largest number in an array
