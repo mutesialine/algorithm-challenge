@@ -27,17 +27,11 @@ export default function isValidPassword(password = "") {
   if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/.test(password)) {
     return false;
   }
-
+  // check if the password doesn't contain the sequence of ascending or descending  numembers
   if (hasSequence(password))
   return false
-  //check if the passowrd doesn't contain the sequence of ascending order or descending order digit
-  // if (
-  //   /(012|123|234|345|456|567|678|789|987|876|765|654|543|432|321|210)/.test(
-  //     password
-  //   )
-  // )
-  //   return false;
 
+  
   const setOfPassword = new Set([...password]);
   if (setOfPassword.size < 4) {
     return false;
