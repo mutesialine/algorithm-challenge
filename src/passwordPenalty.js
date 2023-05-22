@@ -11,17 +11,14 @@ export default function penaltyPoints(password = "") {
     return 0;
   }
   if (typeof password !== "string")
-  //convert password to a stirng if it not a string 
+    //convert password to a stirng if it not a string
     password = String(password);
   //match the  repeated sequences of alphanumeric characters
   const sequences = password.match(/([a-zA-Z0-9])\1{1,}/g);
-  // Increment penalty by 1 for sequences of length 2
-  //Increment penalty by 2 for sequences of length 3 or more
-  //No penalty for sequences of length less than 2
   return sequences
     ? sequences.reduce(
-        (penalty, seq) =>
-          penalty + (seq.length === 2 ? 1 : seq.length >= 3 ? 2 : 0),
+        (penalty, sequence) =>
+          penalty + (sequence.length === 2 ? 1 : sequence.length >= 3 ? 2 : 0),
         0
       )
     : 0;
