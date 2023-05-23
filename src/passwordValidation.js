@@ -38,14 +38,11 @@ export default function isValidPassword(password = "") {
 // Checks if the password contains a sequence of numbers in ascending or descending order it return True if a sequence is found, otherwise false.
 function hasSequence(password) {
   for (let i = 0; i < password.length - 2; i++) {
-    // Ascending sequence
-    const isAscending =
-      Number(password[i]) === Number(password[i + 1]) - 1 &&
-      Number(password[i + 1]) === Number(password[i + 2]) - 1;
-    // Descending sequence
-    const isDecending =
-      Number(password[i]) === Number(password[i + 1]) + 1 &&
-      Number(password[i + 1]) === Number(password[i + 2]) + 1;
+    const current = Number(password[i]);
+    const next1 = Number(password[i + 1]);
+    const next2 = Number(password[i + 2]);
+    const isAscending = current === next1 - 1 && next1 === next2 - 1; // ascending sequence
+    const isDecending = current === next1 + 1 && next1 === next2 + 1; // descending sequence
     if (isAscending || isDecending) {
       return true;
     }

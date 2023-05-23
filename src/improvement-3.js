@@ -9,6 +9,5 @@ export default function findLargestNumber(numbers) {
   if (!Array.isArray(numbers) || !numbers.length) {
     return undefined;
   }
-  //the largest number in an array
   return Math.max(...numbers);
 }
